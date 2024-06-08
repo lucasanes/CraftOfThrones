@@ -1,0 +1,8 @@
+org/example/com/craftofthrones/functions/startTracking$1.class
+org/example/com/craftofthrones/events/OnDeath.class
+org/example/com/craftofthrones/events/OnPlayerUseCompass.class
+org/example/com/craftofthrones/functions/getNearestPlayer.class
+org/example/com/craftofthrones/CraftOfThrones.class
+org/example/com/craftofthrones/functions/startTracking.class
+org/example/com/craftofthrones/events/OnDrop.class
+org/example/com/craftofthrones/functions/cooldown.class

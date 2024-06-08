@@ -1,0 +1,6 @@
+name: CraftOfThrones
+version: '1.0-SNAPSHOT'
+main: org.example.com.craftofthrones.CraftOfThrones
+api-version: '1.20'
+description: CraftOfThrones
+commands:
