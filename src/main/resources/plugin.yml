@@ -4,3 +4,6 @@ main: org.example.com.craftofthrones.CraftOfThrones
 api-version: '1.20'
 description: CraftOfThrones
 commands:
+  enviar:
+    description: Selecione o item que deseja enviar na sua mão com a quantidade desejada.
+    usage: /<command> [Player]

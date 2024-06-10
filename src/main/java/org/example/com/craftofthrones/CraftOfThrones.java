@@ -9,6 +9,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.example.com.craftofthrones.commands.Send;
 import org.example.com.craftofthrones.events.*;
 
 import java.util.ArrayList;
@@ -30,6 +31,8 @@ public final class CraftOfThrones extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new OnPlayerUseCompass(), this);
         getServer().getPluginManager().registerEvents(new OnDrop(), this);
         getServer().getPluginManager().registerEvents(new OnDeath(), this);
+
+        getCommand("enviar").setExecutor(new Send());
 
         getLogger().info("Craft of Thrones iniciou com sucesso!");
 
