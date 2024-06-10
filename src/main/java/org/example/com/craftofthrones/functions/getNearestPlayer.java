@@ -19,6 +19,10 @@ public class getNearestPlayer {
             }
         }
 
-        return nearestPlayer;
+        if (nearestDistance <= 500) {
+            return nearestPlayer;
+        }
+
+        return null;
     }
 }

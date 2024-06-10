@@ -10,7 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class cooldown {
 
     public static final Map<UUID, Long> cooldowns = new HashMap<>();
-    public static final long COOLDOWN_TIME = 180000;
+    public static final long COOLDOWN_TIME = 780000;
+    public static final long USE_TIME = 180000;
 
     public static boolean isInCooldown(Player player) {
         if (!cooldowns.containsKey(player.getUniqueId())) {

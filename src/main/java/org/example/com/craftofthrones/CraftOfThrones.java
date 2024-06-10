@@ -1,6 +1,7 @@
 package org.example.com.craftofthrones;
 
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,21 +13,29 @@ import org.example.com.craftofthrones.events.*;
 
 import java.util.ArrayList;
 
+import static org.example.com.craftofthrones.functions.giveDailyXP.giveDailyXP;
+
 public final class CraftOfThrones extends JavaPlugin implements Listener {
 
     public static CraftOfThrones plugin;
+
+    private FileConfiguration config;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
         plugin = this;
+
         getServer().getPluginManager().registerEvents(this, this);
         getServer().getPluginManager().registerEvents(new OnPlayerUseCompass(), this);
         getServer().getPluginManager().registerEvents(new OnDrop(), this);
         getServer().getPluginManager().registerEvents(new OnDeath(), this);
-        getConfig().options().copyDefaults();
-        saveDefaultConfig();
+
         getLogger().info("Craft of Thrones iniciou com sucesso!");
+
+        config = this.getConfig();
+        config.options().copyDefaults(true);
+        saveConfig();
     }
 
     @Override
@@ -38,6 +47,8 @@ public final class CraftOfThrones extends JavaPlugin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         ensureSingleCompass(player);
+        giveDailyXP(player, config);
+        saveConfig();
     }
 
     @EventHandler
